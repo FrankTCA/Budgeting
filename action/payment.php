@@ -1,5 +1,6 @@
 <?php
 require "../creds.php";
+require_once "../common.php";
 require "../../sso/common.php";
 
 if (!(isset($_GET["category"]) && isset($_GET["name"]) && isset($_GET["date"]) && isset($_GET["amount"]))) {
@@ -7,7 +8,12 @@ if (!(isset($_GET["category"]) && isset($_GET["name"]) && isset($_GET["date"]) &
     die("noinfo");
 }
 
-$category = $_GET["category"];
+$category_str = $_GET["category"];
+$category = parse_setting($category_str);
+if ($category == -1) {
+    http_response_code(400);
+    die("invalid setting");
+}
 $name = $_GET["name"];
 $date = $_GET["date"];
 $amount = $_GET["amount"];
@@ -22,7 +28,7 @@ if (!check_date($date)) {
     die("Date must be written as MM/DD/YYYY");
 }
 
-validate_token("https://infotoast.org/budgeting/action/payment.php");
+validate_token("https://infotoast.org/budget/action/payment.php");
 $user_id = get_user_id();
 
 $conn = mysqli_connect(get_database_host(), get_database_username(), get_database_password(), get_database_db());
