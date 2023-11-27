@@ -36,14 +36,14 @@ if ($conn->connect_error) {
     http_response_code(500);
     die("dbconn");
 }
-
-$sql = $conn->prepare("INSERT INTO expenses (user_id, category, name, amount, expense_date) VALUES (?, ?, ?, ?, ?);");
+$month = date('m-Y');
+$sql = $conn->prepare("INSERT INTO expenses (user_id, category, name, amount, expense_date, expense_month) VALUES (?, ?, ?, ?, ?, ?);");
 $uid = $user_id;
 $cat = $category;
 $amt = $amount;
 $expensename = $name;
 $expensedate = $date;
-$sql->bind_param('iisds', $uid, $cat, $expensename, $amt, $expensedate);
+$sql->bind_param('iisdss', $uid, $cat, $expensename, $amt, $expensedate, $month);
 $sql->execute();
 
 $conn->commit();
