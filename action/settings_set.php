@@ -44,14 +44,14 @@ if ($alreadyset) {
     $sql2 = $conn->prepare("UPDATE settings SET value = ? WHERE id = ?;");
     $val = $value;
     $rid = $row_id;
-    $sql2->bind_param('fi', $val, $rid);
+    $sql2->bind_param('di', $val, $rid);
     $sql2->execute();
 } else {
     $sql2 = $conn->prepare("INSERT INTO settings (user_id, setting_id, value) VALUES (?, ?, ?);");
     $uid2 = $user_id;
     $sid2 = $setting;
     $val = $value;
-    $sql2->bind_param('iif', $uid2, $sid2, $val);
+    $sql2->bind_param('iid', $uid2, $sid2, $val);
     $sql2->execute();
 }
 $conn->commit();

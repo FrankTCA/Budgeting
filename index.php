@@ -32,11 +32,17 @@
         <div class="iconBodyHeader" id="firstHeader">
             <h2>📈This Month's Budget</h2>
         </div>
-        <div class="month-data">
-            <div id="piechart" style="width: 900px; height: 500px;"></div>
-            <div id="monthProgress"></div>
+        <div class="iconSet">
+            <div class="month-data">
+                <div id="piechart" style="width: 60%; height: 40%;"></div>
+                <br>
+                <div id="monthProgress"></div>
+            </div>
         </div>
         <p class="errorMsg" id="errorMsg"></p>
+        <button class="globalButton" id="settingsButton" onclick="window.location.replace('settings.php');">
+            ⚙️
+        </button>
         <div class="iconBodyHeader">
             <h2>📊Categories</h2>
         </div>
@@ -68,7 +74,7 @@
             </a>
             <a href="category.php?category=food">
                 <div class="icon" style="background-color: orangered" id="food">
-                    <svg version="1.1" id="foodIcon" width="128px" height="128px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    <svg version="1.1" class="serviceIcon" id="foodIcon" width="128px" height="128px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
 <g>
     <circle fill="#EEEEEE" cx="256" cy="256" r="150.5"/>
@@ -92,10 +98,10 @@
                     <p class="appName">Food</p>
                 </div>
             </a>
-            <br>
+            <br><br><br>
             <a href="category.php?category=supply">
                 <div class="icon" style="background-color: orange" id="supply">
-                    <svg version="1.1" id="supplyIcon" width="128px" height="128px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    <svg version="1.1" class="serviceIcon" id="supplyIcon" width="128px" height="128px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
 <path fill="#28F75D" stroke="#000000" stroke-miterlimit="10" d="M305.8,63.8v-36h-81v0.5h-35.5h-24.4l24.4,71v37.5
 	c-23.7,3.6-41.9,13.3-47.3,25.5h-1.7v299h0.2c2.6,17.9,32.4,32,68.8,32s66.2-14.1,68.8-32h0.2v-299h-1.7
@@ -111,7 +117,7 @@
             </a>
             <a href="category.php?category=travel">
                 <div class="icon" style="background-color: mediumpurple" id="travel">
-                    <svg version="1.1" id="travelIcon" width="128px" height="128px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    <svg version="1.1" class="serviceIcon" id="travelIcon" width="128px" height="128px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
 <line fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" x1="205.6" y1="240.4" x2="76.6" y2="335.3"/>
                         <ellipse transform="matrix(0.818 -0.5752 0.5752 0.818 -75.8262 179.3342)" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="245.5" cy="209.5" rx="45" ry="17"/>
@@ -143,10 +149,10 @@
                     <p class="appName">Travel</p>
                 </div>
             </a>
-            <br>
+            <br><br><br>
             <a href="category.php?category=software">
                 <div class="icon" style="background-color: steelblue" id="software">
-                    <svg version="1.1" id="softwareIcon" width="128px" height="128px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    <svg version="1.1" class="serviceIcon" id="softwareIcon" width="128px" height="128px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
 <g>
     <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="51" y1="256" x2="461" y2="256">
@@ -173,7 +179,7 @@
             </a>
             <a href="category.php?category=luxury">
                 <div class="icon" style="background-color: lawngreen" id="luxury">
-                    <svg version="1.1" id="luxuryIcon" width="128px" height="128px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    <svg version="1.1" class="serviceIcon" id="luxuryIcon" width="128px" height="128px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
 <g>
     <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="190.7738" y1="164.5826" x2="397.5816" y2="164.5826">

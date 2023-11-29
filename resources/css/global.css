@@ -90,11 +90,17 @@ text {
 .icon {
     display: inline-block;
     padding: 1em 1em 1em 1em;
+    width: 30%;
     border: black hidden;
-    border-radius: 3px;
-    margin-right: 2em;
     margin-left: 1em;
+    margin-right: 2em;
+    border-radius: 3px;
     box-shadow: black 3px 3px;
+    align-content: center;
+}
+
+.icon:hover {
+    box-shadow: black 0 0;
 }
 
 .pricemarker {
@@ -113,7 +119,7 @@ text {
 
 .serviceIcon {
     padding-top: 2em;
-    padding-left: 4em;
+    padding-left: 2.5em;
     padding-right: 1em;
     margin-left: auto;
     margin-right: auto;
