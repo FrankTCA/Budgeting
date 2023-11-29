@@ -9,6 +9,7 @@
     <script type="text/javascript" src="resources/js/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="resources/js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="resources/js/index.js"></script>
     <link type="text/css" rel="stylesheet" href="resources/css/jquery-ui.min.css"/>
     <link type="text/css" rel="stylesheet" href="resources/css/global.css"/>
     <link type="text/css" rel="stylesheet" href="resources/css/local.css"/>
@@ -35,6 +36,7 @@
             <div id="piechart" style="width: 900px; height: 500px;"></div>
             <div id="monthProgress"></div>
         </div>
+        <p class="errorMsg" id="errorMsg"></p>
         <div class="iconBodyHeader">
             <h2>📊Categories</h2>
         </div>
