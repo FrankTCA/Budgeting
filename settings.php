@@ -49,7 +49,7 @@ validate_token("https://infotoast.org/budget/settings.php");
             <h5>Luxury:</h5><br>
             <input type="text" id="luxuryBox" class="loginTextBox" name="luxury" placeholder="300.00"><br>
             <p><i>Extra money can be left for saving/investments.</i></p>
-            <div class="continuebtn" id="continuebtn">
+            <div class="continuebtnfloat" id="continuebtn">
                 <button class="continue" id="continue" onclick="onSettingsSubmit();">Submit</button>
             </div>
         </div>

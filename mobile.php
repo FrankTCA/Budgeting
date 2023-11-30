@@ -6,14 +6,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Info Toast Budgeting</title>
-    <script type="text/javascript" src="resources/js/detect-mobile.js"></script>
     <script type="text/javascript" src="resources/js/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="resources/js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="resources/js/index.js"></script>
     <link type="text/css" rel="stylesheet" href="resources/css/jquery-ui.min.css"/>
-    <link type="text/css" rel="stylesheet" href="resources/css/global.css"/>
-    <link type="text/css" rel="stylesheet" href="resources/css/local.css"/>
+    <link type="text/css" rel="stylesheet" href="resources/css/global-mobile.css"/>
+    <link type="text/css" rel="stylesheet" href="resources/css/local-mobile.css"/>
 </head>
 <body>
     <div class="top">
