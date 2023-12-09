@@ -1,5 +1,5 @@
 function checkValue(text) {
-    let regex = /^[0-9]+\.?[0-9][0-9]$/i
+    let regex = /^[0-9]+\.?[0-9]?[0-9]?$/i
     return regex.test(text);
 }
 
@@ -35,17 +35,21 @@ function onSettingsSubmit() {
     let travelValue = $("#travelBox").val();
     let softwareValue = $("#softwareBox").val();
     let luxuryValue = $("#luxuryBox").val();
-    let incomeGood = submitSetting("income", incomeValue);
-    let utilGood = submitSetting("util", utilValue);
-    let foodGood = submitSetting("food", foodValue);
-    let supplyGood = submitSetting("supply", supplyValue);
-    let travelGood = submitSetting("travel", travelValue);
-    let softwareGood = submitSetting("software", softwareValue);
-    let luxuryGood = submitSetting("luxury", luxuryValue);
-    if (incomeGood && utilGood && foodGood && supplyGood && travelGood && softwareGood && luxuryGood) {
-        window.location.replace("index.php");
+    if (checkValue(incomeValue) && checkValue(utilValue) && checkValue(foodValue) && checkValue(supplyValue) && checkValue(travelValue) && checkValue(softwareValue) && checkValue(luxuryValue)) {
+        let incomeGood = submitSetting("income", incomeValue);
+        let utilGood = submitSetting("util", utilValue);
+        let foodGood = submitSetting("food", foodValue);
+        let supplyGood = submitSetting("supply", supplyValue);
+        let travelGood = submitSetting("travel", travelValue);
+        let softwareGood = submitSetting("software", softwareValue);
+        let luxuryGood = submitSetting("luxury", luxuryValue);
+        if (incomeGood && utilGood && foodGood && supplyGood && travelGood && softwareGood && luxuryGood) {
+            window.location.replace("index.php");
+        } else {
+            $("#errorMsg").text("Please make sure you write your values in the form of a decimal, with no more than two numbers after the .");
+        }
     } else {
-        $("#errorMsg").text("Please make sure you write your values in the form of a decimal, with no more than two numbers after the .");
+        $("#errorMsg").text("Please fill out every box.");
     }
 }
 
