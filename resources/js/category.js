@@ -1,5 +1,5 @@
 function checkValue(text) {
-    let regex = /^[0-9]+\.?[0-9][0-9]$/i
+    let regex = /^-?[0-9]+\.?[0-9]?[0-9]?$/i
     return regex.test(text);
 }
 function onPaymentSubmit() {
