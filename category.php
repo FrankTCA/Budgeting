@@ -83,6 +83,7 @@ switch($category) {
             <div class="continuebtn" id="continuebtn">
                 <button class="continue" id="continue" onclick="onPaymentSubmit();">Submit</button>
             </div>
+            <p><i>Names of payments are encrypted end-to-end. We cannot see the nature of your purchases.</i></p>
         </div>
         <div class="iconBodyHeader">
             <h2>💲This Month's Payment Log:</h2>
