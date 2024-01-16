@@ -41,7 +41,7 @@ if ($result = $sql->get_result()) {
         if ($rows > 0) {
             echo ", ";
         }
-        echo "{\"id\":" . $row["id"] . ", \"name\": \"" . $row["name"] . "\", \"amount\": " . $row["amount"] . ", \"expense_date\": \"" . $row["expense_date"] . "\"}";
+        echo "{\"id\":" . $row["id"] . ", \"name\": \"" . $row["name"] . "\", \"amount\": " . $row["amount"] . ", \"expense_date\": \"" . $row["expense_date"] . "\", \"encrypted\":" . $row["encrypted"] . "}";
         $rows++;
     }
 }

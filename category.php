@@ -40,6 +40,8 @@ switch($category) {
     <title>Budget for <?php echo $catName; ?></title>
     <script type="text/javascript" src="resources/js/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="resources/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../crypto/aes.js"></script>
+    <script type="text/javascript" src="../crypto/key-runtime.js"></script>
     <script type="text/javascript" src="resources/js/category.js"></script>
     <link type="text/css" rel="stylesheet" href="resources/css/jquery-ui.min.css"/>
     <link type="text/css" rel="stylesheet" href="resources/css/global.css"/>

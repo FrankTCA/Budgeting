@@ -4,6 +4,7 @@ function checkValue(text) {
 }
 function onPaymentSubmit() {
     let paymentName = $("#paymentNameBox").val();
+    let paymentNameEncrypted = encryptText(paymentName);
     let paymentDate = $("#paymentDateBox").val();
     let paymentAmount = $("#paymentAmountBox").val();
     let paymentCategory = $("#category").val();
@@ -30,7 +31,7 @@ function onPaymentSubmit() {
             $("#errorMsg").text(data);
         }
     }
-    xhttp.open("GET", "action/payment.php?category=" + paymentCategory + "&name=" + paymentName + "&date=" + paymentDate + "&amount=" + paymentAmount);
+    xhttp.open("GET", "action/payment.php?category=" + paymentCategory + "&name=" + paymentNameEncrypted + "&date=" + paymentDate + "&amount=" + paymentAmount);
     xhttp.send();
     $("#paymentNameBox").val("");
     $("#paymentAmountBox").val("");
@@ -60,8 +61,15 @@ function refreshData() {
                     value: progress
                 });
                 for (var i = 0; i < jsonData.payments.length; i++) {
-                    console.log("Payment name: " + jsonData.payments[i].name);
-                    $("#paymentTable").append("<tr><td>" + jsonData.payments[i].name + "</td><td>" + jsonData.payments[i].amount + "</td><td>" + jsonData.payments[i].expense_date + "</td></tr>");
+                    console.log("Payment name Encrypted: " + jsonData.payments[i].name);
+                    var paymentName = "";
+                    if (jsonData.payments[i].encrypted) {
+                        paymentName = decryptText(jsonData.payments[i].name);
+                        console.log(paymentName);
+                    } else {
+                        paymentName = jsonData.payments[i].name;
+                    }
+                    $("#paymentTable").append("<tr><td>" + paymentName + "</td><td>" + jsonData.payments[i].amount + "</td><td>" + jsonData.payments[i].expense_date + "</td></tr>");
                 }
                 /*$.each(data.payments, function(k, v) {
                     $("#paymentTable").append("<tr><td>" + v.name + "</td><td>" + v.amount + "</td><td>" + v.expense_date + "</td></tr>");
