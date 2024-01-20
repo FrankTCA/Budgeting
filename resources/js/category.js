@@ -4,7 +4,7 @@ function checkValue(text) {
 }
 function onPaymentSubmit() {
     let paymentName = $("#paymentNameBox").val();
-    let paymentNameEncrypted = encryptText(paymentName);
+    let paymentNameEncrypted = encryptText(paymentName).toString().replace(/\s/g,'');
     let paymentDate = $("#paymentDateBox").val();
     let paymentAmount = $("#paymentAmountBox").val();
     let paymentCategory = $("#category").val();

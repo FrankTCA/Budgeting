@@ -27,7 +27,7 @@ if ($conn->connect_error) {
 $total_amount = get_setting($conn, $user_id, $category);
 $amount_spent = calculate_spent($conn, $user_id, $category);
 
-echo "{\"total_amount\": " . $total_amount . ", \"already_spent\": " . $amount_spent . ", \"payments\": [";
+echo '{"total_amount": ' . $total_amount . ', "already_spent": ' . $amount_spent . ', "payments": [';
 
 $month = date('m-Y');
 $sql = $conn->prepare("SELECT * FROM expenses WHERE user_id = ? AND category = ? AND expense_month LIKE ?;");
@@ -39,11 +39,11 @@ $rows = 0;
 if ($result = $sql->get_result()) {
     while ($row = $result->fetch_assoc()) {
         if ($rows > 0) {
-            echo ", ";
+            echo ', ';
         }
-        echo "{\"id\":" . $row["id"] . ", \"name\": \"" . $row["name"] . "\", \"amount\": " . $row["amount"] . ", \"expense_date\": \"" . $row["expense_date"] . "\", \"encrypted\":" . $row["encrypted"] . "}";
+        echo '{"id":' . $row["id"] . ', "name": "' . addcslashes($row["name"], '\\') . '", "amount": ' . $row["amount"] . ', "expense_date": "' . $row["expense_date"] . '", "encrypted":' . $row["encrypted"] . '}';
         $rows++;
     }
 }
 
-echo "], \"username\": \"" . get_username() . "\"}";
+echo '], "username": "' . get_username() . '"}';
