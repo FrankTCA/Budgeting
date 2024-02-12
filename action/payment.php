@@ -18,6 +18,8 @@ $name = $_GET["name"];
 $date = $_GET["date"];
 $amount = $_GET["amount"];
 
+$name = str_replace(" ", "+", $name);
+
 if (strlen($name) > 64) {
     http_response_code(400);
     die("Name must be max 64 characters.");

@@ -41,7 +41,7 @@ if ($result = $sql->get_result()) {
         if ($rows > 0) {
             echo ', ';
         }
-        echo '{"id":' . $row["id"] . ', "name": "' . addcslashes($row["name"], '\\') . '", "amount": ' . $row["amount"] . ', "expense_date": "' . $row["expense_date"] . '", "encrypted":' . $row["encrypted"] . '}';
+        echo '{"id":' . $row["id"] . ', "name": "' . str_replace(" ", "+", addcslashes($row["name"], '\\')) . '", "amount": ' . $row["amount"] . ', "expense_date": "' . $row["expense_date"] . '", "encrypted":' . $row["encrypted"] . '}';
         $rows++;
     }
 }
