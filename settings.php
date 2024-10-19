@@ -13,6 +13,7 @@ validate_token("https://infotoast.org/budget/settings.php");
     <script type="text/javascript" src="/sso/resources/login-box.js"></script>
     <script type="text/javascript" src="resources/js/settingsPage.js"></script>
     <link type="text/css" rel="stylesheet" href="resources/css/jquery-ui.min.css"/>
+    <link type="text/css" rel="stylesheet" href="/global-resources/mallory.css"/>
     <link type="text/css" rel="stylesheet" href="/sso/resources/login-box.css"/>
     <link type="text/css" rel="stylesheet" href="resources/css/global.css"/>
     <link type="text/css" rel="stylesheet" href="resources/css/local.css"/>

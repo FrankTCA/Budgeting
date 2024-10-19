@@ -31,6 +31,7 @@ if ($conn->connect_error) {
     ?>
     <script type="text/javascript" src="resources/js/index.js"></script>
     <link type="text/css" rel="stylesheet" href="resources/css/jquery-ui.min.css"/>
+    <link type="text/css" rel="stylesheet" href="/global-resources/mallory.css"/>
     <link type="text/css" rel="stylesheet" href="/sso/resources/login-box.css"/>
     <link type="text/css" rel="stylesheet" href="resources/css/global.css"/>
     <link type="text/css" rel="stylesheet" href="resources/css/local.css"/>

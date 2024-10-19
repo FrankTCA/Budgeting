@@ -46,6 +46,7 @@ switch($category) {
     <script type="text/javascript" src="../crypto/key-runtime.js"></script>
     <script type="text/javascript" src="resources/js/category.js"></script>
     <link type="text/css" rel="stylesheet" href="resources/css/jquery-ui.min.css"/>
+    <link type="text/css" rel="stylesheet" href="/global-resources/mallory.css"/>
     <link type="text/css" rel="stylesheet" href="/sso/resources/login-box.css"/>
     <link type="text/css" rel="stylesheet" href="resources/css/global.css"/>
     <link type="text/css" rel="stylesheet" href="resources/css/local.css"/>

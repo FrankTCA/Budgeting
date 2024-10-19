@@ -98,7 +98,7 @@ h5 {
 
 .payments {
     color: coral;
-    font-family: "Roboto Light", sans-serif;
+    font-family: "Mallory-Medium", sans-serif;
     padding-left: 25%;
 }
 
@@ -111,7 +111,7 @@ h5 {
     padding: 3%;
     width: 70%;
     transition: 0.3s;
-    font-family: "Roboto", sans-serif;
+    font-family: "Mallory-Medium", sans-serif;
 }
 
 .badtextboxmsg {
