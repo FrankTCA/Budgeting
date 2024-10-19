@@ -1,6 +1,17 @@
 <?php
-    require "../sso/common.php";
-    validate_token("https://infotoast.org/budget/");
+require "../sso/common.php";
+require "creds.php";
+require "action/settings_get.php";
+validate_token("https://infotoast.org/budget/");
+
+$user_id = get_user_id();
+
+$conn = mysqli_connect(get_database_host(), get_database_username(), get_database_password(), get_database_db());
+if ($conn->connect_error) {
+    die("ERROR: Could not connect to database! Please email frank@infotoast.org if you receive this error.");
+} else {
+    $googleChartEnabled = get_setting($conn, $user_id, 7) == 1;
+}
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +21,13 @@
     <script type="text/javascript" src="resources/js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="/sso/resources/node_modules/js-cookie/dist/js.cookie.min.js"></script>
     <script type="text/javascript" src="/sso/resources/login-box.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <?php
+    if ($googleChartEnabled) {
+        ?>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <?php
+    }
+    ?>
     <script type="text/javascript" src="resources/js/index.js"></script>
     <link type="text/css" rel="stylesheet" href="resources/css/jquery-ui.min.css"/>
     <link type="text/css" rel="stylesheet" href="/sso/resources/login-box.css"/>
@@ -32,8 +49,14 @@
         </div>
         <div class="iconSet">
             <div class="month-data">
-                <div id="piechart" style="width: 60%; height: 40%;"></div>
-                <br>
+                <?php
+                if ($googleChartEnabled) {
+                    ?>
+                    <div id="piechart" style="width: 60%; height: 40%;"></div>
+                    <br>
+                    <?php
+                }
+                ?>
                 <div id="monthProgress"></div>
             </div>
         </div>
