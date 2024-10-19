@@ -28,6 +28,9 @@ function parse_setting($name): int {
         case "luxury":
             $setting = 6;
             break;
+        case "googleChart":
+            $setting = 7;
+            break;
     }
     return $setting;
 }

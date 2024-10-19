@@ -8,7 +8,11 @@ function get_setting($conn, $user_id, $setting_id) {
             return $row["value"];
         }
     }
-    return null;
+    if ($setting_id == "googleChart") {
+        return 1;
+    } else {
+        return null;
+    }
 }
 
 function calculate_spent($conn, $user_id, $setting_id) {

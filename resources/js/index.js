@@ -17,25 +17,28 @@ $(document).ready(function() {
             let travelAmount = output.settings.travel;
             let softwareAmount = output.settings.software;
             let luxuryAmount = output.settings.luxury;
-            google.charts.load('current', {'packages': ['corechart']});
-            google.charts.setOnLoadCallback(drawPieChart);
-            function drawPieChart() {
-                var data1 = google.visualization.arrayToDataTable([
-                    ['Budget', 'Category'],
-                    ['Rent/Utilities', utilAmount],
-                    ['Food', foodAmount],
-                    ['Household Supply', supplyAmount],
-                    ['Travel', travelAmount],
-                    ['Software', softwareAmount],
-                    ['Luxury', luxuryAmount]
-                ]);
+            let googleChartEnabled = output.settings.googleChart == "yes";
+            if (googleChartEnabled) {
+                google.charts.load('current', {'packages': ['corechart']});
+                google.charts.setOnLoadCallback(drawPieChart);
+                function drawPieChart() {
+                    var data1 = google.visualization.arrayToDataTable([
+                        ['Budget', 'Category'],
+                        ['Rent/Utilities', utilAmount],
+                        ['Food', foodAmount],
+                        ['Household Supply', supplyAmount],
+                        ['Travel', travelAmount],
+                        ['Software', softwareAmount],
+                        ['Luxury', luxuryAmount]
+                    ]);
 
-                var options = {
-                    title: 'Budget by Category'
+                    var options = {
+                        title: 'Budget by Category'
+                    }
+                    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+                    chart.draw(data1, options);
                 }
-                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-                chart.draw(data1, options);
             }
         }
     });

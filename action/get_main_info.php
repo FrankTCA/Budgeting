@@ -20,7 +20,8 @@ $settings = array(
     "supply" => get_setting($conn, $user_id, 3),
     "travel" => get_setting($conn, $user_id, 4),
     "software" => get_setting($conn, $user_id, 5),
-    "luxury" => get_setting($conn, $user_id, 6)
+    "luxury" => get_setting($conn, $user_id, 6),
+    "googleChart" => (get_setting($conn, $user_id, 7) == 1) ? "yes" : "no"
 );
 
 if (is_null($settings["income"])) {
@@ -51,7 +52,7 @@ $ratios = array(
 $settings["save"] = $settings["income"] - ($settings["util"] + $settings["food"] + $settings["supply"] + $settings["travel"] + $settings["software"] + $settings["luxury"]);
 
 echo "{\"ratio_complete\":" . $ratios["income"] . ", \"income\": " . $settings["income"] . ", \"settings\":{\"util\":" . $settings["util"] . ", \"food\":" . $settings["food"] . ", \"supply\":" . $settings["supply"] .
-    ", \"travel\":" . $settings["travel"] . ", \"software\":" . $settings["software"] . ", \"luxury\":" . $settings["luxury"] . "}, " .
+    ", \"travel\":" . $settings["travel"] . ", \"software\":" . $settings["software"] . ", \"luxury\":" . $settings["luxury"] . ", \"googleChart\":\"" . $settings["googleChart"] . "\"}, " .
     "\"amount_spent\": {\"income\": " . $spent["income"] . ", \"util\": " . $spent["util"] . ", \"food\": " . $spent["food"] . ", \"supply\": " . $spent["supply"] . ", \"travel\": " . $spent["travel"] . ", \"software\": " . $spent["software"] . ", \"luxury\": " . $spent["luxury"] . "}, " .
     "\"ratio_spent\": {\"income\": " . $ratios["income"] . ", \"util\": " . $ratios["util"] . ", \"food\": " . $ratios["food"] . ", \"supply\": " . $ratios["supply"] . ", \"travel\": " . $ratios["travel"] . ", \"software\": " . $ratios["software"] . ", \"luxury\": " . $ratios["luxury"] . "}, " .
     "\"leftover_save\": " . $settings["save"] . ", \"username\": \"" . get_username() . "\"}";

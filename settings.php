@@ -10,7 +10,7 @@ validate_token("https://infotoast.org/budget/settings.php");
     <script type="text/javascript" src="resources/js/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="resources/js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="/sso/resources/node_modules/js-cookie/dist/js.cookie.min.js"></script>
-    <script type="text/javascript" src="/sso/resources/login-box.js"
+    <script type="text/javascript" src="/sso/resources/login-box.js"></script>
     <script type="text/javascript" src="resources/js/settingsPage.js"></script>
     <link type="text/css" rel="stylesheet" href="resources/css/jquery-ui.min.css"/>
     <link type="text/css" rel="stylesheet" href="/sso/resources/login-box.css"/>
@@ -46,6 +46,12 @@ validate_token("https://infotoast.org/budget/settings.php");
             <input type="text" id="softwareBox" class="loginTextBox" name="software" placeholder="200.00"><br>
             <h5>Luxury:</h5><br>
             <input type="text" id="luxuryBox" class="loginTextBox" name="luxury" placeholder="300.00"><br>
+            <h5>Enable Google Chart?</h5>
+            <p>Displays a google chart of your budget allocation, but your browser sends a request to Google in the process.</p>
+            <label class="switch">
+                <input type="checkbox" id="googleChartBox" name="googleChart">
+                <span class="slider"></span>
+            </label>
             <p><i>Extra money can be left for saving/investments.</i></p>
             <div class="continuebtnfloat" id="continuebtn">
                 <button class="continue" id="continue" onclick="onSettingsSubmit();">Submit</button>
